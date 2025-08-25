@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Background decoration -->
+        <div class="bg-decoration">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+        
+        <div class="container">
+            <header class="header">
+                <div class="header-content">
+                    <div class="header-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="header-text">
+                        <h1>My Tasks</h1>
+                        <p class="header-subtitle">Stay organized and productive</p>
+                    </div>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-tasks">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="completed-tasks">0</span>
+                        <span class="stat-label">Done</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="progress-percentage">0%</span>
+                        <span class="stat-label">Progress</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="input-section">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <i class="fas fa-plus input-icon"></i>
+                        <input type="text" id="task-input" placeholder="What needs to be done?" maxlength="200" autocomplete="off">
+                    </div>
+                    <button id="add-btn" class="btn-primary" title="Add task">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-tabs">
+                    <button id="filter-all" class="filter-btn active" data-filter="all">
+                        <i class="fas fa-list"></i>
+                        <span>All</span>
+                    </button>
+                    <button id="filter-active" class="filter-btn" data-filter="active">
+                        <i class="fas fa-clock"></i>
+                        <span>Active</span>
+                    </button>
+                    <button id="filter-completed" class="filter-btn" data-filter="completed">
+                        <i class="fas fa-check"></i>
+                        <span>Done</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <ul id="task-list" class="task-list">
+                    <!-- Tasks will be dynamically inserted here -->
+                </ul>
+                
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="empty-title">No tasks yet</h3>
+                    <p class="empty-message">Add a task above to get started!</p>
+                </div>
+            </div>
+
+            <div class="actions-section">
+                <button id="clear-completed" class="btn-clear" disabled>
+                    <i class="fas fa-trash-alt"></i>
+                    <span>Clear Completed</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
